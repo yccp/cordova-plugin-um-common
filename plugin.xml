@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin 
+  xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-um-common" version="1.0.0">
+  <name>UMCommon</name>
+  <description>Cordova Plugin for Umeng</description>
+  <license>ISC</license>
+  <keywords>cordova,umeng,social,share,push</keywords>
+  <dependency id="cordova-plugin-cocoapod-support" version="^1.0.0" />
+  <preference name="UM_IOS_KEY" />
+  <preference name="UM_ANDROID_KEY" />
+  <preference name="UM_IOS_CHANNEL" />
+  <preference name="UM_ANDROID_CHANNEL" />
+  <platform name="ios">
+    <pod name="UMCCommon" />
+    <config-file target="config.xml" parent="/*">
+      <feature name="UMCommon">
+        <param name="ios-package" value="UMCommon" />
+        <param name="onload" value="true" />
+      </feature>
+      <preference name="UM_IOS_KEY" value="$UM_IOS_KEY" />
+    </config-file>
+    <header-file src="src/ios/UMCommon.h" />
+    <source-file src="src/ios/UMCommon.m" />
+  </platform>
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="UMCommon">
+        <param name="android-package" value="news.chen.yu.ionic.UMCommon"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+      <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+      <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+      <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <meta-data android:name="UMENG_APPKEY" android:value="$UM_ANDROID_KEY"></meta-data>
+      <meta-data android:name="UMENG_CHANNEL" android:value="$UM_ANDROID_CHANNEL"></meta-data>
+    </config-file>
+    <framework src="src/android/UMCommon.gradle" custom="true" type="gradleReference" />
+    <source-file src="src/android/UMCommon.java" target-dir="src/news/chen/yu/ionic" />
+  </platform>
+</plugin>
