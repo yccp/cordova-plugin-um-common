@@ -1,5 +1,5 @@
 #import <Cordova/CDVPlugin.h>
-#import <UMSocialCore/UMSocialCore.h>
+#import <UMCommon/UMCommon.h>
 
 @interface UMCommon : CDVPlugin
 

@@ -11,6 +11,9 @@
   <preference name="UM_IOS_CHANNEL" />
   <preference name="UM_ANDROID_CHANNEL" />
   <platform name="ios">
+    <pods-config ios-min-version="9.0" use-frameworks="true">
+      <source url="https://github.com/CocoaPods/Specs.git"/>
+    </pods-config>
     <pod name="UMCCommon" />
     <config-file target="config.xml" parent="/*">
       <feature name="UMCommon">
