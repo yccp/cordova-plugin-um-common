@@ -27,4 +27,3 @@ ionic cordova plugin add cordova-plugin-cocoapod-support
 
 - [cordova-plugin-um-share](https://github.com/yccp/cordova-plugin-um-share.git)
 
-- [cordova-plugin-um-push](https://github.com/yccp/cordova-plugin-um-push.git)
