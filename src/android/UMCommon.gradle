@@ -3,5 +3,5 @@ repositories {
 }
 
 dependencies {
-    compile 'com.umeng.sdk:common:latest.integration'
+    compile 'com.umeng.sdk:common:1.5.1'
 }
