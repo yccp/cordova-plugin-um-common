@@ -4,4 +4,5 @@ repositories {
 
 dependencies {
     compile 'com.umeng.sdk:common:1.5.1'
+    compile 'com.android.support:support-v4:latest.integration'
 }
